@@ -1,5 +1,10 @@
 /target
 /.m2
+.idea
+.github
+.cfignore
+.gitignore
+.dockerignore
 
 
 /.classpath
