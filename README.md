@@ -1,48 +1,60 @@
-<p align="center">
-    <a href="https://cloud.ibm.com">
-        <img src="https://cloud.ibm.com/media/docs/developer-appservice/resources/ibm-cloud.svg" height="100" alt="IBM Cloud">
-    </a>
-</p>
+# What you need
+
+1. Java
+2. Maven
+
+# How to execute
+
+1. `mvn install`
+2. `java -jar ./target/javaspringapp-1.0-SNAPSHOT.jar`
 
 
-<p align="center">
-    <a href="https://cloud.ibm.com">
-    <img src="https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg" alt="IBM Cloud">
-    </a>
-    <a href="https://www.ibm.com/developerworks/learn/java/">
-    <img src="https://img.shields.io/badge/platform-java-lightgrey.svg?style=flat" alt="platform">
-    </a>
-    <img src="https://img.shields.io/badge/license-Apache2-blue.svg?style=flat" alt="Apache 2">
-</p>
+## Productive end point
 
+http://java-spring-app-eywxh-2021-02-12.us-south.cf.appdomain.cloud/v1/topsecret
 
-# Create and deploy a basic Java Spring application
+## Test
 
-> We have applications available for [Node.js Express](https://github.com/IBM/node-express-app), [Go Gin](https://github.com/IBM/go-gin-app), [Python Flask](https://github.com/IBM/python-flask-app), [Python Django](https://github.com/IBM/python-django-app), [Java Spring](https://github.com/IBM/java-spring-app), [Java Liberty](https://github.com/IBM/java-liberty-app), [Swift Kitura](https://github.com/IBM/swift-kitura-app), [Android](https://github.com/IBM/android-app), and [iOS](https://github.com/IBM/ios-app).
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{
+    "satellites": [
+        {
+            "name": "kenobi",
+            "distance": 100.0,
+            "message": [
+                "este",
+                "",
+                "",
+                "mensaje",
+                ""
+            ]
+        },
+        {
+            "name": "skywalker",
+            "distance": 115.5,
+            "message": [
+                "",
+                "es",
+                "",
+                "",
+                "secreto"
+            ]
+        },
+        {
+            "name": "sato",
+            "distance": 142.7,
+            "message": [
+                "este",
+                "",
+                "un",
+                "",
+                ""
+            ]
+        }
+    ]
+}' http://java-spring-app-eywxh-2021-02-12.us-south.cf.appdomain.cloud/v1/topsecret
 
-In this sample application, you will create a basic Java cloud application using Spring. This provides a good starting point for creating Java microservice applications running on [Spring](https://spring.io/). It contains no default application code, but comes with standard best practices, including a health check.
-
-Capabilities are provided through dependencies in the `pom.xml` file. The ports are set to the defaults of `8080` for http and `8443` for https and are exposed to the CLI in the `cli-config.yml` file. The ports are set in the `pom.xml` file and exposed to the CLI in the `cli-config.yml` file.
-
-The application exposes the following endpoints:
-* Health endpoint: `<host>:<port>/health` e.g. http://localhost:8080/health
-* Web content: `<host>:<port>`
-
-## Steps
-
-You can [deploy this application to IBM Cloud](https://cloud.ibm.com/developer/appservice/starter-kits/java-spring-app) or [build it locally](#building-locally) by cloning this repo first. Once your app is live, you can access the `/health` endpoint to build out your cloud native application.
-
-### Deploying to IBM Cloud
-
-<p align="center">
-    <a href="https://cloud.ibm.com/developer/appservice/starter-kits/java-spring-app">
-    <img src="https://cloud.ibm.com/devops/setup/deploy/button_x2.png" alt="Deploy to IBM Cloud">
-    </a>
-</p>
-
-Click **Deploy to IBM Cloud** to deploy this same application to IBM Cloud. This option creates a deployment pipeline, complete with a hosted GitLab project and a DevOps toolchain. You can deploy your app to Cloud Foundry, a Kubernetes cluster, or a Red Hat OpenShift cluster. OpenShift is available only through a standard cluster, which requires you to have a billable account.
-
-[IBM Cloud DevOps](https://www.ibm.com/cloud/devops) services provides toolchains as a set of tool integrations that support development, deployment, and operations tasks inside IBM Cloud.
 
 ### Building Locally
 
